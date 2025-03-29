@@ -1,0 +1,38 @@
+# Simple and easiest To-Do List Application
+todo_list = []
+
+def show_list():
+    print("Your To-Do List:")
+    for task in todo_list:
+        print(f"- {task}")
+
+def add_task(task):
+    todo_list.append(task)
+
+def remove_task(task):
+    if task in todo_list:
+        todo_list.remove(task)
+
+def main():
+    while True:
+        print("\nTo-Do List Options:")
+        print("1. Show To-Do List")
+        print("2. Add Task")
+        print("3. Remove Task")
+        print("4. Exit")
+        
+        choice = input("Choose an option: ")
+        
+        if choice == "1":
+            show_list()
+        elif choice == "2":
+            task = input("Enter the task: ")
+            add_task(task)
+        elif choice == "3":
+            task = input("Enter the task to remove: ")
+            remove_task(task)
+        elif choice == "4":
+            break
+
+if __name__ == "__main__":
+    main()
